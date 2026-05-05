@@ -126,7 +126,7 @@ export default function PortfolioModal({ item, onClose }: Props) {
                 i === imgIdx ? 'border-lcm-orange' : 'border-transparent opacity-60'
               }`}
             >
-              <img src={src} alt="" className="w-full h-full object-cover" />
+              <img src={src} alt={`${item.name} — foto ${i + 1}`} className="w-full h-full object-cover" />
             </button>
           ))}
         </div>

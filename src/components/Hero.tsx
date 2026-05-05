@@ -23,10 +23,10 @@ function getTimeLeft(targetDate: string): TimeLeft {
 function CountdownUnit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center">
-      <span className="text-4xl lg:text-6xl font-black tabular-nums text-white leading-none">
+      <span className="text-2xl sm:text-4xl lg:text-6xl font-black tabular-nums text-white leading-none">
         {String(value).padStart(2, '0')}
       </span>
-      <span className="text-xs font-medium tracking-widest uppercase text-lcm-gray mt-1">{label}</span>
+      <span className="text-[10px] sm:text-xs font-medium tracking-widest uppercase text-lcm-gray mt-1">{label}</span>
     </div>
   )
 }
@@ -77,7 +77,7 @@ export default function Hero() {
         </div>
 
         {/* Main headline */}
-        <h1 className="text-6xl sm:text-7xl lg:text-9xl font-black tracking-tighter uppercase text-white leading-none mb-4">
+        <h1 className="text-5xl sm:text-7xl lg:text-9xl font-black tracking-tighter uppercase text-white leading-none mb-4">
           O TOCANTINS<br />
           <span className="text-lcm-orange">CORRE.</span>
         </h1>
@@ -93,13 +93,13 @@ export default function Hero() {
         </div>
 
         {/* Countdown */}
-        <div className="mt-8 flex items-start gap-6 lg:gap-12">
+        <div className="mt-8 flex items-start gap-2 sm:gap-6 lg:gap-12">
           <CountdownUnit value={timeLeft.days} label="Dias" />
-          <span className="text-4xl lg:text-6xl font-black text-lcm-orange leading-none">:</span>
+          <span className="text-2xl sm:text-4xl lg:text-6xl font-black text-lcm-orange leading-none">:</span>
           <CountdownUnit value={timeLeft.hours} label="Horas" />
-          <span className="text-4xl lg:text-6xl font-black text-lcm-orange leading-none">:</span>
+          <span className="text-2xl sm:text-4xl lg:text-6xl font-black text-lcm-orange leading-none">:</span>
           <CountdownUnit value={timeLeft.minutes} label="Min" />
-          <span className="text-4xl lg:text-6xl font-black text-lcm-orange leading-none">:</span>
+          <span className="text-2xl sm:text-4xl lg:text-6xl font-black text-lcm-orange leading-none">:</span>
           <CountdownUnit value={timeLeft.seconds} label="Seg" />
         </div>
 
