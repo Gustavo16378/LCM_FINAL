@@ -84,12 +84,21 @@ function EventCard({ event, onClick }: { event: Event; onClick: () => void }) {
   )
 }
 
+const INITIAL_COUNT = 3
+
 export default function Events() {
   const [filter, setFilter] = useState<Filter>('all')
   const [selected, setSelected] = useState<Event | null>(null)
+  const [showAll, setShowAll] = useState(false)
   const { ref, isVisible } = useIntersectionObserver()
 
   const filtered = filter === 'all' ? events : events.filter((e) => e.status === filter)
+  const visible = showAll ? filtered : filtered.slice(0, INITIAL_COUNT)
+
+  function handleFilter(f: Filter) {
+    setFilter(f)
+    setShowAll(false)
+  }
 
   return (
     <section id="events" className="bg-lcm-dark py-20 lg:py-28" ref={ref}>
@@ -118,7 +127,7 @@ export default function Events() {
             {(['all', 'open', 'soon'] as Filter[]).map((f) => (
               <button
                 key={f}
-                onClick={() => setFilter(f)}
+                onClick={() => handleFilter(f)}
                 className={`px-4 py-2 text-xs font-bold tracking-wider uppercase transition-all duration-200 ${
                   filter === f
                     ? 'bg-lcm-orange text-white'
@@ -133,7 +142,7 @@ export default function Events() {
 
         {/* Events list */}
         <div className="flex flex-col gap-4">
-          {filtered.map((event, i) => (
+          {visible.map((event, i) => (
             <div
               key={event.id}
               style={{
@@ -146,6 +155,17 @@ export default function Events() {
             </div>
           ))}
         </div>
+
+        {filtered.length > INITIAL_COUNT && (
+          <div className="mt-6 flex justify-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="px-8 py-3 border border-white/20 text-lcm-gray hover:border-lcm-orange hover:text-white text-xs font-bold tracking-wider uppercase transition-all duration-200"
+            >
+              {showAll ? 'Ver menos' : `Ver todos os ${filtered.length} eventos`}
+            </button>
+          </div>
+        )}
 
         <p className="mt-8 text-center text-lcm-gray text-xs tracking-wider">
           Kits e inscrições via{' '}

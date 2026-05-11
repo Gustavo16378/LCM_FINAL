@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-10">
           {/* Brand */}
           <div>
-            <img src={logoLCM} alt="LCM Gestão Esportiva" className="h-10 w-auto" />
+            <img src={logoLCM} alt="LCM Gestão Esportiva" className="w-36 h-auto" />
             <p className="text-lcm-gray text-sm mt-3 leading-relaxed">
               Referência em gestão de eventos esportivos no Tocantins desde 2011.
             </p>
