@@ -9,7 +9,7 @@ export default function Sponsors() {
   const perEvent = sponsors.filter((s) => s.type === 'event')
 
   return (
-    <section id="patrocinadores" className="bg-lcm-light py-20 lg:py-28" ref={ref}>
+    <section id="sponsors" className="bg-lcm-light py-20 lg:py-28" ref={ref}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div

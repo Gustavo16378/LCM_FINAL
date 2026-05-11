@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { nextEvent } from '../data/events'
+import heroRunning from '../assets/hero/hero-running.jpg'
+import heroFootball from '../assets/hero/hero-football.jpg'
+import heroBasquete from '../assets/hero/hero-basquete.webp'
+
+const heroBgs = [heroRunning, heroFootball, heroBasquete]
 
 interface TimeLeft {
   days: number
@@ -33,9 +38,15 @@ function CountdownUnit({ value, label }: { value: number; label: string }) {
 
 export default function Hero() {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(getTimeLeft(nextEvent.date))
+  const [bgIdx, setBgIdx] = useState(0)
 
   useEffect(() => {
     const id = setInterval(() => setTimeLeft(getTimeLeft(nextEvent.date)), 1000)
+    return () => clearInterval(id)
+  }, [])
+
+  useEffect(() => {
+    const id = setInterval(() => setBgIdx((i) => (i + 1) % heroBgs.length), 5000)
     return () => clearInterval(id)
   }, [])
 
@@ -52,12 +63,16 @@ export default function Hero() {
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1920&q=80"
-          alt="Corrida"
-          className="w-full h-full object-cover"
-          loading="eager"
-        />
+        {heroBgs.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt="Corrida"
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+            style={{ opacity: i === bgIdx ? 1 : 0 }}
+            loading={i === 0 ? 'eager' : 'lazy'}
+          />
+        ))}
         <div className="absolute inset-0 bg-lcm-dark/75" />
         <div className="absolute inset-0 bg-gradient-to-b from-lcm-dark/30 via-transparent to-lcm-dark" />
       </div>
@@ -79,7 +94,7 @@ export default function Hero() {
         {/* Main headline */}
         <h1 className="text-5xl sm:text-7xl lg:text-9xl font-black tracking-tighter uppercase text-white leading-none mb-4">
           O TOCANTINS<br />
-          <span className="text-lcm-orange">CORRE.</span>
+          <span className="text-lcm-orange">Compete.</span>
         </h1>
 
         {/* Event name */}
@@ -114,21 +129,17 @@ export default function Hero() {
             Garanta Sua Vaga
           </a>
           <a
-            href="#sobre"
+            href="#about"
             className="px-8 py-4 border border-white/30 text-white font-black tracking-wider uppercase text-sm hover:border-white hover:bg-white/5 transition-all duration-200"
           >
             Conheça a LCM
           </a>
         </div>
-
-        <p className="mt-4 text-xs text-lcm-gray">
-          Inscrições via Chip Brasil — parceiro oficial
-        </p>
       </div>
 
       {/* Scroll indicator */}
       <a
-        href="#numeros"
+        href="#stats"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-lcm-gray hover:text-white transition-colors animate-bounce"
       >
         <ChevronDown size={28} />

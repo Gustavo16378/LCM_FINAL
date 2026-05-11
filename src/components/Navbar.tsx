@@ -2,14 +2,15 @@ import { useEffect, useRef, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { useActiveSection } from '../hooks/useActiveSection'
 import { useScrollDirection } from '../hooks/useScrollDirection'
+import logoLCM from '../assets/logo/logoLCM.png'
 
 const links = [
-  { label: 'Sobre', href: '#sobre', id: 'sobre' },
-  { label: 'Eventos', href: '#eventos', id: 'eventos' },
+  { label: 'Sobre', href: '#about', id: 'about' },
+  { label: 'Eventos', href: '#events', id: 'events' },
   { label: 'Portfólio', href: '#portfolio', id: 'portfolio' },
-  { label: 'Comunidade', href: '#comunidade', id: 'comunidade' },
-  { label: 'LCM Crono', href: '#crono', id: 'crono' },
-  { label: 'Contato', href: '#contato', id: 'contato' },
+  { label: 'Comunidade', href: '#community', id: 'community' },
+  { label: 'LCM Crono', href: '#lcm-crono', id: 'lcm-crono' },
+  { label: 'Contato', href: '#contact', id: 'contact' },
 ]
 
 export default function Navbar() {
@@ -67,12 +68,10 @@ export default function Navbar() {
         }`}
         style={{ transform: navHidden && !open ? 'translateY(-100%)' : 'translateY(0)' }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16 lg:h-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-2 z-50 relative">
-            <span className="text-2xl font-black tracking-tighter text-white uppercase">
-              LCM<span className="text-lcm-orange">.</span>
-            </span>
+          <a href="#hero" className="flex items-center z-50 relative">
+            <img src={logoLCM} alt="LCM Gestão Esportiva" className="w-40 lg:w-52 h-auto" />
           </a>
 
           {/* Desktop links */}
@@ -97,7 +96,7 @@ export default function Navbar() {
               )
             })}
             <a
-              href="#eventos"
+              href="#events"
               className="ml-4 px-5 py-2 bg-lcm-orange text-white text-sm font-bold tracking-wider uppercase hover:bg-orange-600 transition-colors duration-200"
             >
               Inscreva-se
@@ -123,10 +122,8 @@ export default function Navbar() {
         }`}
       >
         {/* Drawer header */}
-        <div className="flex items-center justify-between px-6 h-16 border-b border-white/10 shrink-0">
-          <span className="text-lg font-black tracking-tighter text-white uppercase">
-            LCM<span className="text-lcm-orange">.</span>
-          </span>
+        <div className="flex items-center justify-between px-6 h-20 border-b border-white/10 shrink-0">
+          <img src={logoLCM} alt="LCM Gestão Esportiva" className="w-36 h-auto" />
           <button onClick={() => setOpen(false)} className="text-lcm-gray hover:text-white">
             <X size={20} />
           </button>
@@ -157,7 +154,7 @@ export default function Navbar() {
         {/* CTA button */}
         <div className="px-4 pb-8 pt-4 shrink-0">
           <a
-            href="#eventos"
+            href="#events"
             onClick={handleLinkClick}
             className="block w-full py-4 bg-lcm-orange text-white text-sm font-black tracking-wider uppercase text-center hover:bg-orange-600 transition-colors"
           >

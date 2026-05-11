@@ -206,7 +206,7 @@ export default function Community() {
   const { ref, isVisible } = useIntersectionObserver()
 
   return (
-    <section id="comunidade" className="bg-lcm-navy py-20 lg:py-28" ref={ref}>
+    <section id="community" className="bg-lcm-navy py-20 lg:py-28" ref={ref}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div

@@ -27,7 +27,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contato" className="bg-lcm-dark py-20 lg:py-28" ref={ref}>
+    <section id="contact" className="bg-lcm-dark py-20 lg:py-28" ref={ref}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div
@@ -71,7 +71,7 @@ export default function Contact() {
           </a>
 
           <a
-            href="#contato-form"
+            href="#contact-form"
             className="group flex flex-col items-center text-center p-8 border border-lcm-orange bg-lcm-orange/10 hover:bg-lcm-orange/20 transition-all duration-300"
           >
             <Calendar size={32} className="text-lcm-orange mb-4" strokeWidth={1.5} />
@@ -99,7 +99,7 @@ export default function Contact() {
 
         {/* Form */}
         <div
-          id="contato-form"
+          id="contact-form"
           className="max-w-2xl mx-auto"
           style={{
             opacity: isVisible ? 1 : 0,

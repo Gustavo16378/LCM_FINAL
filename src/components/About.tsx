@@ -1,5 +1,6 @@
 import { Eye, Target, Heart } from 'lucide-react'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
+import timeImg from '../assets/founders/TIME.png'
 
 const values = [
   {
@@ -23,7 +24,7 @@ export default function About() {
   const { ref, isVisible } = useIntersectionObserver()
 
   return (
-    <section id="sobre" className="bg-lcm-light py-20 lg:py-32">
+    <section id="about" className="bg-lcm-light py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-12" ref={ref}>
         {/* Header */}
         <div
@@ -79,9 +80,9 @@ export default function About() {
           }}
         >
           <img
-            src="https://images.unsplash.com/photo-1461897104016-0b3b00cc81ee?w=1400&q=80"
+            src={timeImg}
             alt="Equipe LCM"
-            className="w-full h-64 lg:h-96 object-cover"
+            className="w-full h-80 lg:h-[520px] object-cover object-top"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-lcm-dark/50 flex items-end p-8">

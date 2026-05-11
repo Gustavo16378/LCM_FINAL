@@ -17,9 +17,8 @@ export const portfolioItems: PortfolioItem[] = [
     name: 'Meia Maratona do Tocantins',
     date: 'Agosto 2024',
     participants: 2100,
-    image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
     images: [
-      'https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&q=80',
       'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
       'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80',
       'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80',
@@ -56,7 +55,6 @@ export const portfolioItems: PortfolioItem[] = [
     image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
     images: [
       'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
-      'https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&q=80',
     ],
     description:
       'Clássico da corrida de rua em Palmas. Com 1.600 participantes e percurso pela Orla do Lago, a Corrida LCM 10K 2024 foi a maior edição em número de inscritos da história do evento.',

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
 const SECTION_IDS = [
-  'hero', 'numeros', 'sobre', 'eventos',
-  'portfolio', 'comunidade', 'patrocinadores',
-  'crono', 'faq', 'contato',
+  'hero', 'stats', 'about', 'events',
+  'portfolio', 'community', 'sponsors',
+  'lcm-crono', 'faq', 'contact',
 ]
 
 export function useActiveSection() {

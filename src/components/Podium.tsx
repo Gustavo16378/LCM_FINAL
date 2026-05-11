@@ -58,7 +58,7 @@ export default function Podium() {
   })
 
   return (
-    <section id="podio" className="bg-lcm-dark py-20 lg:py-28" ref={ref}>
+    <section id="podium" className="bg-lcm-dark py-20 lg:py-28" ref={ref}>
       <div className="max-w-5xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div
@@ -137,7 +137,7 @@ export default function Podium() {
 
         <p className="mt-10 text-center text-lcm-gray text-xs tracking-wider">
           Cronometragem oficial por{' '}
-          <a href="#crono" className="text-lcm-orange hover:underline">LCM Crono</a>
+          <a href="#lcm-crono" className="text-lcm-orange hover:underline">LCM Crono</a>
           {' '}via tecnologia Chip Brasil
         </p>
       </div>

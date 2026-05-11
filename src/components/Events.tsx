@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { MapPin, Calendar, Users, ChevronRight } from 'lucide-react'
+import { MapPin, Calendar, Users, ChevronRight, Package } from 'lucide-react'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import { events, type Event } from '../data/events'
 import EventModal from './EventModal'
@@ -41,8 +41,14 @@ function EventCard({ event, onClick }: { event: Event; onClick: () => void }) {
           <div className="flex flex-col gap-2 mb-6">
             <div className="flex items-center gap-2 text-lcm-gray text-sm">
               <Calendar size={14} className="text-lcm-orange shrink-0" />
-              <span>{date}</span>
+              <span>Prova: {date}</span>
             </div>
+            {event.kitDelivery && (
+              <div className="flex items-center gap-2 text-lcm-gray text-sm">
+                <Package size={14} className="text-lcm-orange shrink-0" />
+                <span>Kit: {event.kitDelivery.date} · {event.kitDelivery.hours}</span>
+              </div>
+            )}
             <div className="flex items-center gap-2 text-lcm-gray text-sm">
               <MapPin size={14} className="text-lcm-orange shrink-0" />
               <span>{event.location}</span>
@@ -86,7 +92,7 @@ export default function Events() {
   const filtered = filter === 'all' ? events : events.filter((e) => e.status === filter)
 
   return (
-    <section id="eventos" className="bg-lcm-dark py-20 lg:py-28" ref={ref}>
+    <section id="events" className="bg-lcm-dark py-20 lg:py-28" ref={ref}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div
@@ -142,16 +148,16 @@ export default function Events() {
         </div>
 
         <p className="mt-8 text-center text-lcm-gray text-xs tracking-wider">
-          Inscrições via{' '}
+          Kits e inscrições via{' '}
           <a
-            href="https://www.chipbrasil.com.br"
+            href="https://viaesporte.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-lcm-orange hover:underline"
           >
-            Chip Brasil
+            Via Esporte
           </a>{' '}
-          — parceiro oficial da LCM Gestão Esportiva
+          — parceira oficial da LCM Gestão Esportiva
         </p>
       </div>
 

@@ -222,7 +222,7 @@ export default function EventModal({ event, onClose }: Props) {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-8 py-4 bg-lcm-orange text-white font-black tracking-wider uppercase text-sm hover:bg-orange-600 transition-colors"
             >
-              Inscreva-se no Chip Brasil <ExternalLink size={14} />
+              Inscreva-se via Via Esporte <ExternalLink size={14} />
             </a>
           ) : (
             <span className="flex items-center justify-center px-8 py-4 border border-white/20 text-lcm-gray font-bold tracking-wider uppercase text-sm">
@@ -230,7 +230,7 @@ export default function EventModal({ event, onClose }: Props) {
             </span>
           )}
           <p className="self-center text-lcm-gray text-xs">
-            Inscrições via Chip Brasil — parceiro oficial
+            Kits e inscrições via Via Esporte — parceira oficial
           </p>
         </div>
       </div>

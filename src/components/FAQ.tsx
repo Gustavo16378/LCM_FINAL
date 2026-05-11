@@ -5,11 +5,11 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 const faqs = [
   {
     q: 'Como me inscrevo em uma corrida da LCM?',
-    a: 'As inscrições são realizadas exclusivamente através do Chip Brasil, nosso parceiro oficial. Acesse o link do evento desejado na seção "Próximos Desafios" e você será direcionado para a plataforma de inscrição.',
+    a: 'As inscrições e a venda de kits são realizadas pela Via Esporte, nossa parceira oficial. Acesse o link do evento desejado na seção "Próximos Desafios" e você será direcionado para a plataforma de inscrição.',
   },
   {
     q: 'Os ingressos são vendidos no site da LCM?',
-    a: 'Não. O site da LCM não comercializa ingressos diretamente. Todas as inscrições são processadas pelo Chip Brasil, garantindo segurança e praticidade na sua compra.',
+    a: 'Não. O site da LCM não comercializa kits ou ingressos diretamente. Toda a venda é processada pela Via Esporte, garantindo segurança e praticidade na sua compra.',
   },
   {
     q: 'Como a LCM pode organizar meu evento esportivo?',
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: 'Com que frequência acontecem os eventos da LCM?',
-    a: 'Realizamos aproximadamente 15 eventos por ano, distribuídos ao longo de todo o calendário. Desde corridas curtas de 5K até meias maratonas de 21 km, garantindo opções para todos os níveis de atletas.',
+    a: 'Participamos de 2 a 4 eventos por mês — entre organizados pela LCM e eventos de terceiros onde prestamos cronometragem. Desde corridas curtas de 5K até meias maratonas de 21 km, há opções para todos os níveis de atletas.',
   },
 ]
 

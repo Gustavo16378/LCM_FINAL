@@ -11,7 +11,7 @@ const stats: Stat[] = [
   { value: 14, suffix: '+', label: 'Anos de Atuação' },
   { value: 200, suffix: '+', label: 'Eventos Realizados' },
   { value: 15000, suffix: '+', label: 'Participantes' },
-  { value: 15, suffix: '', label: 'Eventos por Ano' },
+  { value: 4, suffix: '', label: 'Eventos por Mês' },
 ]
 
 function CountUp({ target, suffix, isVisible }: { target: number; suffix: string; isVisible: boolean }) {
@@ -49,7 +49,7 @@ export default function Stats() {
   const { ref, isVisible } = useIntersectionObserver()
 
   return (
-    <section id="numeros" className="bg-lcm-dark py-20 lg:py-28" ref={ref}>
+    <section id="stats" className="bg-lcm-dark py-20 lg:py-28" ref={ref}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">
           {stats.map((stat, i) => (

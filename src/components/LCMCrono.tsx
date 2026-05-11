@@ -11,7 +11,7 @@ export default function LCMCrono() {
   const { ref, isVisible } = useIntersectionObserver()
 
   return (
-    <section id="crono" className="relative py-20 lg:py-28 overflow-hidden" ref={ref}>
+    <section id="lcm-crono" className="relative py-20 lg:py-28 overflow-hidden" ref={ref}>
       {/* Background */}
       <div className="absolute inset-0 bg-lcm-navy" />
       <div className="absolute inset-0 opacity-10">

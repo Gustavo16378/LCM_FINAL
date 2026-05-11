@@ -1,14 +1,15 @@
 import { Instagram, Mail } from 'lucide-react'
+import logoLCM from '../assets/logo/logoLCM.png'
 
 const links = [
-  { label: 'Sobre', href: '#sobre' },
-  { label: 'Eventos', href: '#eventos' },
+  { label: 'Sobre', href: '#about' },
+  { label: 'Eventos', href: '#events' },
   { label: 'Portfólio', href: '#portfolio' },
-  { label: 'Comunidade', href: '#comunidade' },
-  { label: 'Patrocinadores', href: '#patrocinadores' },
-  { label: 'LCM Crono', href: '#crono' },
+  { label: 'Comunidade', href: '#community' },
+  { label: 'Patrocinadores', href: '#sponsors' },
+  { label: 'LCM Crono', href: '#lcm-crono' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Contato', href: '#contato' },
+  { label: 'Contato', href: '#contact' },
 ]
 
 export default function Footer() {
@@ -18,9 +19,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-10">
           {/* Brand */}
           <div>
-            <span className="text-3xl font-black tracking-tighter text-white uppercase">
-              LCM<span className="text-lcm-orange">.</span>
-            </span>
+            <img src={logoLCM} alt="LCM Gestão Esportiva" className="h-10 w-auto" />
             <p className="text-lcm-gray text-sm mt-3 leading-relaxed">
               Referência em gestão de eventos esportivos no Tocantins desde 2011.
             </p>
@@ -68,9 +67,7 @@ export default function Footer() {
           <p className="text-lcm-gray text-xs tracking-wider">
             LCM Gestão Esportiva © 2025 · Palmas, Tocantins
           </p>
-          <p className="text-white/20 text-xs">
-            Inscrições via Chip Brasil — parceiro oficial
-          </p>
+          
         </div>
       </div>
     </footer>
