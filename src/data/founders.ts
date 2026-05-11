@@ -12,18 +12,18 @@ export interface Founder {
 
 export const founders: Founder[] = [
   {
-    id: 'cezar',
-    name: 'Cézar Leão',
-    role: 'Diretor Técnico',
-    bio: 'Professor de Educação Física com mais de 20 anos de docência universitária. MBA em Gestão Organizacional. Ex-técnico da Seleção Brasileira de Handebol. Referência em gestão e planejamento esportivo no Centro-Oeste.',
-    image: cezarImg,
-  },
-  {
     id: 'luiz',
     name: 'Luiz Capatan',
     role: 'Gerente Executivo',
     bio: 'Professor de Educação Física. MBA pela FGV. Gestor de futebol com certificações CBF e FIFA. Especialização pelo COB. Gestor da Escola Oficial do Flamengo em Palmas. Referência em gestão esportiva de alto nível.',
     image: luizImg,
+  },
+  {
+    id: 'cezar',
+    name: 'Cézar Leão',
+    role: 'Diretor Técnico',
+    bio: 'Professor de Educação Física com mais de 20 anos de docência universitária. MBA em Gestão Organizacional. Ex-técnico da Seleção Brasileira de Handebol. Referência em gestão e planejamento esportivo no Centro-Oeste.',
+    image: cezarImg,
   },
   {
     id: 'matheus',

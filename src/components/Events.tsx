@@ -166,19 +166,6 @@ export default function Events() {
             </button>
           </div>
         )}
-
-        <p className="mt-8 text-center text-lcm-gray text-xs tracking-wider">
-          Kits e inscrições via{' '}
-          <a
-            href="https://viaesporte.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-lcm-orange hover:underline"
-          >
-            Via Esporte
-          </a>{' '}
-          — parceira oficial da LCM Gestão Esportiva
-        </p>
       </div>
 
       <EventModal event={selected} onClose={() => setSelected(null)} />

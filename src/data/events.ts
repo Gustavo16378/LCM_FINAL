@@ -126,11 +126,9 @@ export const events: Event[] = [
     expectedParticipants: 1200,
     chipBrasilUrl: viaEsporte,
     status: 'open',
-    image: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80',
+    image: '/photos/Meia Maratona das Praias/MEIA MARATONA DAS PRAIAS.webp',
     images: [
-      'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80',
-      'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80',
-      'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+      '/photos/Meia Maratona das Praias/MEIA MARATONA DAS PRAIAS.webp',
     ],
     distance: '21 KM',
     description:
@@ -235,11 +233,10 @@ export const events: Event[] = [
     expectedParticipants: 1000,
     chipBrasilUrl: viaEsporte,
     status: 'soon',
-    image: 'https://images.unsplash.com/photo-1486218119243-13301ef26a17?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1461896836934-1f360e9cad3c?w=800&q=80',
     images: [
-      'https://images.unsplash.com/photo-1486218119243-13301ef26a17?w=800&q=80',
+      'https://images.unsplash.com/photo-1461896836934-1f360e9cad3c?w=800&q=80',
       'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80',
-      'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
     ],
     distance: '10 KM / 21 KM',
     description:

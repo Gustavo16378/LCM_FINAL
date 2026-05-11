@@ -17,12 +17,10 @@ export const portfolioItems: PortfolioItem[] = [
     name: 'Meia Maratona do Tocantins',
     date: 'Agosto 2024',
     participants: 2100,
-    image: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1461896836934-1f360e9cad3c?w=800&q=80',
     images: [
-      'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80',
+      'https://images.unsplash.com/photo-1461896836934-1f360e9cad3c?w=800&q=80',
       'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80',
-      'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80',
-      'https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=800&q=80',
     ],
     description:
       'A maior edição da história. Com 2.100 atletas inscritos, percurso de 21 km cortando Palmas do centro até a Orla da Graciosa. Cobertura completa pela LCM Crono com chip RFID, painel de resultados em tempo real e transmissão ao vivo.',
@@ -52,9 +50,9 @@ export const portfolioItems: PortfolioItem[] = [
     name: 'Corrida LCM 10K',
     date: 'Junho 2024',
     participants: 1600,
-    image: 'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80',
     images: [
-      'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=800&q=80',
+      'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80',
     ],
     description:
       'Clássico da corrida de rua em Palmas. Com 1.600 participantes e percurso pela Orla do Lago, a Corrida LCM 10K 2024 foi a maior edição em número de inscritos da história do evento.',
@@ -67,9 +65,9 @@ export const portfolioItems: PortfolioItem[] = [
     name: 'Desafio da Superação',
     date: 'Outubro 2023',
     participants: 620,
-    image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80',
     images: [
-      'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80',
+      'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80',
     ],
     description:
       'Prova técnica de 15 km com percurso desafiador no Parque Cesamar. Trechos com subidas, descidas e trilhas que testaram o limite de cada atleta.',
@@ -82,10 +80,9 @@ export const portfolioItems: PortfolioItem[] = [
     name: 'Corrida LCM 15K',
     date: 'Setembro 2023',
     participants: 980,
-    image: 'https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80',
     images: [
-      'https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=800&q=80',
-      'https://images.unsplash.com/photo-1486218119243-13301ef26a17?w=800&q=80',
+      'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80',
     ],
     description:
       '15 km pela capital, incluindo a Avenida JK e o Bosque dos Pioneiros. Uma das provas mais completas da temporada, com largada e chegada na Praça dos Girassóis.',
