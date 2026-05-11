@@ -211,7 +211,7 @@ function Quiz() {
 
       <div className="flex flex-col gap-2">
         {q.options.map((opt, i) => {
-          let style = 'border border-white/20 text-white hover:border-lcm-orange hover:bg-lcm-orange/10'
+          let style = 'border border-white/20 text-white hover:border-white/50'
           if (selected !== null) {
             if (i === q.correctIndex)
               style = 'border border-green-500 bg-green-500/20 text-green-400'
