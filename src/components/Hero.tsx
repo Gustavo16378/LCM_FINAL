@@ -83,7 +83,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto">
         {/* Eyebrow */}
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center gap-3 mb-4">
           <div className="h-px w-8 bg-lcm-orange" />
           <span className="text-lcm-orange text-xs font-bold tracking-[0.3em] uppercase">
             Próximo Desafio
@@ -92,23 +92,23 @@ export default function Hero() {
         </div>
 
         {/* Main headline */}
-        <h1 className="text-5xl sm:text-7xl lg:text-9xl font-black tracking-tighter uppercase text-white leading-none mb-4">
+        <h1 className="text-[2.2rem] sm:text-7xl lg:text-9xl font-black tracking-tighter uppercase text-white leading-none mb-3">
           O TOCANTINS<br />
           <span className="text-lcm-orange">Compete.</span>
         </h1>
 
         {/* Event name */}
-        <div className="mt-8 mb-2">
-          <h2 className="text-2xl lg:text-4xl font-black tracking-tighter uppercase text-white">
+        <div className="mt-4 sm:mt-8 mb-2">
+          <h2 className="text-xl sm:text-2xl lg:text-4xl font-black tracking-tighter uppercase text-white">
             {nextEvent.name}
           </h2>
-          <p className="text-lcm-gray text-sm lg:text-base mt-2 tracking-wider">
+          <p className="text-lcm-gray text-xs sm:text-sm lg:text-base mt-1 tracking-wider">
             {eventDate} · {nextEvent.location} · {nextEvent.distance}
           </p>
         </div>
 
         {/* Countdown */}
-        <div className="mt-8 flex items-start gap-2 sm:gap-6 lg:gap-12">
+        <div className="mt-5 sm:mt-8 flex items-start gap-2 sm:gap-6 lg:gap-12">
           <CountdownUnit value={timeLeft.days} label="Dias" />
           <span className="text-2xl sm:text-4xl lg:text-6xl font-black text-lcm-orange leading-none">:</span>
           <CountdownUnit value={timeLeft.hours} label="Horas" />
@@ -119,7 +119,7 @@ export default function Hero() {
         </div>
 
         {/* CTAs */}
-        <div className="mt-10 flex flex-col sm:flex-row gap-4">
+        <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
           <a
             href={nextEvent.chipBrasilUrl}
             target="_blank"

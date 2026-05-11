@@ -1,12 +1,16 @@
 import { useState } from 'react'
-import { CheckCircle, XCircle, Share2, RotateCcw } from 'lucide-react'
+import { CheckCircle, XCircle, Share2, RotateCcw, Trophy, MapPin } from 'lucide-react'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import { quizQuestions } from '../data/quiz'
+import Modal from './Modal'
 
 interface Athlete {
   id: string
   name: string
+  sport: string
+  location: string
   achievement: string
+  bio: string
   thumbnail: string
 }
 
@@ -14,49 +18,94 @@ const athletes: Athlete[] = [
   {
     id: '1',
     name: 'Giovani dos Santos',
+    sport: 'Corrida de Rua',
+    location: 'Palmas, TO',
     achievement: 'Campeão da Meia Maratona do Tocantins 2024',
-    thumbnail: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=80',
+    bio: 'Correu sua primeira prova LCM em 2019 e nunca mais parou. Em 2024 cruzou a linha de chegada da Meia Maratona do Tocantins em 1h14min — novo recorde do evento. Treina 6 dias por semana e é referência de dedicação na comunidade de corredores de Palmas.',
+    thumbnail: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80',
   },
   {
     id: '2',
     name: 'Carla Ribeiro',
+    sport: 'Corrida de Rua',
+    location: 'Palmas, TO',
     achievement: 'Recordista feminina — Corrida LCM 10K',
-    thumbnail: 'https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&q=80',
+    bio: 'Professora de educação física que descobriu a corrida de rua aos 32 anos e se tornou atleta de elite. Detentora do recorde feminino da Corrida LCM 10K com 39min52s. Treina com o grupo LCM Running e inspira centenas de mulheres a calçar o tênis e ir para a rua.',
+    thumbnail: 'https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600&q=80',
   },
   {
     id: '3',
     name: 'Felipe Nunes',
+    sport: 'Corrida Noturna',
+    location: 'Palmas, TO',
     achievement: 'Elite Runner — Night Run Tocantins 2023/2024',
-    thumbnail: 'https://images.unsplash.com/photo-1580261450046-d0a30080dc9b?w=400&q=80',
+    bio: 'Bicampeão da Night Run Tocantins, Felipe é conhecido pela consistência e pelo ritmo forte nas provas noturnas. Representa Palmas em eventos regionais e nacionais. Em 2024 completou o desafio de correr 12 provas em 12 meses consecutivos.',
+    thumbnail: 'https://images.unsplash.com/photo-1580261450046-d0a30080dc9b?w=600&q=80',
   },
   {
     id: '4',
     name: 'Mariana Torres',
+    sport: 'Corrida Trail',
+    location: 'Palmas, TO',
     achievement: 'Top 3 Desafio da Superação — 3 edições consecutivas',
-    thumbnail: 'https://images.unsplash.com/photo-1549576490-b0b4831ef60a?w=400&q=80',
+    bio: 'Triatleta e corredora de trail, Mariana é a única atleta a subir ao pódio nas três primeiras edições do Desafio da Superação. Combina natação, ciclismo e corrida com uma disciplina de respeito. Quer representar o Tocantins em campeonatos nacionais de triathlon em 2026.',
+    thumbnail: 'https://images.unsplash.com/photo-1549576490-b0b4831ef60a?w=600&q=80',
   },
 ]
 
-function AthleteCard({ athlete }: { athlete: Athlete }) {
+function AthleteCard({ athlete, onClick }: { athlete: Athlete; onClick: () => void }) {
   return (
-    <div className="group relative overflow-hidden">
+    <button onClick={onClick} className="group relative overflow-hidden w-full text-left cursor-pointer">
       <div className="relative w-full aspect-[3/4] overflow-hidden">
         <img
           src={athlete.thumbnail}
           alt={athlete.name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-lcm-dark via-lcm-dark/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-lcm-dark via-lcm-dark/20 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-3">
           <h4 className="text-white font-black text-xs uppercase tracking-tighter leading-tight">
             {athlete.name}
           </h4>
           <p className="text-lcm-gray text-xs mt-0.5 leading-snug">{athlete.achievement}</p>
         </div>
+        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <span className="px-2 py-1 bg-lcm-orange text-white text-[10px] font-black tracking-widest uppercase">
+            Ver mais
+          </span>
+        </div>
         <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-lcm-orange group-hover:w-full transition-all duration-500" />
       </div>
-    </div>
+    </button>
+  )
+}
+
+function AthleteModal({ athlete, onClose }: { athlete: Athlete | null; onClose: () => void }) {
+  if (!athlete) return null
+  return (
+    <Modal open={!!athlete} onClose={onClose} size="md">
+      <div className="relative h-72 overflow-hidden">
+        <img src={athlete.thumbnail} alt={athlete.name} className="w-full h-full object-cover object-top" />
+        <div className="absolute inset-0 bg-gradient-to-t from-lcm-dark/90 to-transparent" />
+        <div className="absolute bottom-4 left-6">
+          <span className="text-lcm-orange text-xs font-bold tracking-widest uppercase">{athlete.sport}</span>
+        </div>
+      </div>
+      <div className="p-6 lg:p-8">
+        <h2 className="text-3xl font-black tracking-tighter uppercase text-white mb-1">{athlete.name}</h2>
+        <div className="flex items-center gap-4 mb-6">
+          <span className="flex items-center gap-1 text-lcm-gray text-xs">
+            <MapPin size={12} className="text-lcm-orange" /> {athlete.location}
+          </span>
+        </div>
+        <div className="flex items-start gap-3 mb-6 p-4 bg-lcm-navy/50 border-l-2 border-lcm-orange">
+          <Trophy size={16} className="text-lcm-orange mt-0.5 shrink-0" />
+          <p className="text-white text-sm font-bold">{athlete.achievement}</p>
+        </div>
+        <p className="text-lcm-gray text-sm leading-relaxed">{athlete.bio}</p>
+      </div>
+    </Modal>
   )
 }
 
@@ -204,6 +253,7 @@ function Quiz() {
 
 export default function Community() {
   const { ref, isVisible } = useIntersectionObserver()
+  const [selectedAthlete, setSelectedAthlete] = useState<Athlete | null>(null)
 
   return (
     <section id="community" className="bg-lcm-navy py-20 lg:py-28" ref={ref}>
@@ -248,7 +298,7 @@ export default function Community() {
                     transition: `opacity 0.5s ease-out ${i * 0.1 + 0.3}s, transform 0.5s ease-out ${i * 0.1 + 0.3}s`,
                   }}
                 >
-                  <AthleteCard athlete={a} />
+                  <AthleteCard athlete={a} onClick={() => setSelectedAthlete(a)} />
                 </div>
               ))}
             </div>
@@ -274,6 +324,7 @@ export default function Community() {
           </div>
         </div>
       </div>
+      <AthleteModal athlete={selectedAthlete} onClose={() => setSelectedAthlete(null)} />
     </section>
   )
 }
