@@ -54,22 +54,18 @@ export default function EventModal({ event, onClose }: Props) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-lcm-dark/80 to-transparent" />
 
-        {/* Distance badge */}
-        <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bg-lcm-orange text-white text-xs font-black tracking-widest uppercase">
+        {/* Badges — empilhados à esquerda para não sobrepor o X */}
+        <div className="absolute top-4 left-4 flex flex-col gap-2">
+          <span className="px-3 py-1 bg-lcm-orange text-white text-xs font-black tracking-widest uppercase self-start">
             {event.distance}
           </span>
-        </div>
-
-        {/* Status badge */}
-        <div className="absolute top-4 right-12">
           {event.status === 'open' ? (
-            <span className="flex items-center gap-1.5 px-3 py-1 bg-green-600/90 text-white text-xs font-bold tracking-wider uppercase">
+            <span className="flex items-center gap-1.5 px-3 py-1 bg-green-600/90 text-white text-xs font-bold tracking-wider uppercase self-start">
               <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
               Inscrições Abertas
             </span>
           ) : (
-            <span className="px-3 py-1 bg-white/20 text-white text-xs font-bold tracking-wider uppercase">
+            <span className="px-3 py-1 bg-white/20 text-white text-xs font-bold tracking-wider uppercase self-start">
               Em Breve
             </span>
           )}
