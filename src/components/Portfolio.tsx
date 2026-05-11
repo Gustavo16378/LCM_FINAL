@@ -47,7 +47,7 @@ export default function Portfolio() {
                   : item.size === 'medium'
                   ? 'col-span-1 row-span-1'
                   : 'col-span-1'
-              } ${i === 0 ? 'aspect-[4/3]' : 'aspect-square'}`}
+              } ${i === 0 ? 'aspect-[4/3] lg:aspect-square' : 'aspect-square'}`}
             >
               <img
                 src={item.image}

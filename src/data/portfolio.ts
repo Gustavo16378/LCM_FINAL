@@ -17,9 +17,9 @@ export const portfolioItems: PortfolioItem[] = [
     name: 'Meia Maratona do Tocantins',
     date: 'Agosto 2024',
     participants: 2100,
-    image: 'https://images.unsplash.com/photo-1461896836934-1f360e9cad3c?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1687063596110-cb8ec98fc5b0?w=800&q=80',
     images: [
-      'https://images.unsplash.com/photo-1461896836934-1f360e9cad3c?w=800&q=80',
+      'https://images.unsplash.com/photo-1687063596110-cb8ec98fc5b0?w=800&q=80',
       'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80',
     ],
     description:
